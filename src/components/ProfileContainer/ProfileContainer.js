@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router';
-import InitialPage from '../InitialPage/InitialPage';
 import NotFounded from '../NotFounded/NotFounded';
 import Preloader from '../Preloader/Preloader';
-import {getUser} from './../../redux/reducers/users-reducer';
+import {getUser, getRepos} from './../../redux/reducers/users-reducer';
 import styles from './ProfileContainer.module.css';
-import ProfileInfo from './ProfileInfo/ProfileInfo';
-import Repos from './Repos/Repos';
+import ProfileInfoContainer from './ProfileInfoContainer/ProfileInfoContainer';
+import ReposContainer from './ReposContainer/ReposContainer';
+import NotFoundImg from './../../img/not-found.svg';
 
 const ProfileContainer = (props) => {
-    
+  
+
+  const onPageChanged = (pageNumber) => {
+    props.getRepos(props.searchValue, pageNumber);
+}
     useEffect(() => {
         props.getUser(props.searchValue);
     }, [props.searchValue])
@@ -23,11 +26,11 @@ const ProfileContainer = (props) => {
         : <>
             {props.isFounded && props.searchValue &&
             <>
-                <ProfileInfo user={props.user}/>
-                <Repos repos={props.repos}/>
+                <ProfileInfoContainer/>
+                <ReposContainer onPageChanged={onPageChanged}/>
             </>
             }
-            {(!props.searchValue ||!props.isFounded) && <NotFounded title="User not found"/>}
+            {(!props.searchValue ||!props.isFounded) && <NotFounded img={NotFoundImg} title="User not found"/>}
         </>}
             
         </div>
@@ -36,12 +39,10 @@ const ProfileContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-      user: state.user.user,
-      repos: state.user.repos,
       searchValue: state.user.searchValue,
       isFounded: state.user.isFounded,
       isFetching: state.user.isFetching
     }
   }
 
-export default connect(mapStateToProps, {getUser})(ProfileContainer);
+export default connect(mapStateToProps, {getUser, getRepos})(ProfileContainer);

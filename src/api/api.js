@@ -9,12 +9,20 @@ export const userAPI = {
                 return error.response;
             })
     },
-    async getRepos(username) {
+    async getRepos(username, currentPage) {
+        return await axios.get(`https://api.github.com/users/${username}/repos?page=${currentPage}&per_page=4`)
+            .then(response => response.data)
+            .catch(error => {
+                console.log(error.response);
+                return error.response;
+            })
+    },
+    async getTotalCountRepos(username) {
         return await axios.get(`https://api.github.com/users/${username}/repos`)
             .then(response => response.data)
             .catch(error => {
                 console.log(error.response);
                 return error.response;
             })
-    }
+    },
 }

@@ -7,7 +7,7 @@ const NotFounded = (props) => {
         <div className={styles.container}>
             <div className={styles.notFoundPage}>
                 <div className={styles.notFoundPage__icon}>
-                    <img src={NotFoundImg} alt="Not Found User"/>
+                    <img src={props.img} alt="Not Found User"/>
                 </div>
                 <div className={styles.notFoundPage__title}>
                     {props.title}

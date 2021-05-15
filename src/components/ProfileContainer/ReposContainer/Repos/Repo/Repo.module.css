@@ -1,5 +1,10 @@
 .repo {
     padding: 24px 56px 24px 32px;
+    margin-top: 24px;
+}
+
+.repo:first-child {
+    margin-top: auto;
 }
 
 .repo__title {

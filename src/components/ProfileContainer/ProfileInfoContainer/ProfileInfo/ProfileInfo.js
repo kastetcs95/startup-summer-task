@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ProfileInfo.module.css';
-import Followers from './../../../img/followers.svg';
-import Following from './../../../img/following.svg';
+import Followers from './../../../../img/followers.svg';
+import Following from './../../../../img/following.svg';
 
 const ProfileInfo = (props) => {
 
