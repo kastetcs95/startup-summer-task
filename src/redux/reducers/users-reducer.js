@@ -85,6 +85,8 @@ export const getUser = (username) => {
                 dispatch(setIsFounded(false))
                 dispatch(setIsFetching(false))
             } else {
+                
+                dispatch(getTotalCountRepos(username))
                 dispatch(setSearchUser(username))
                 dispatch(setUser(response))
                 dispatch(setIsFounded(true))
@@ -107,14 +109,13 @@ export const getRepos = (username, currentPage = 1) => {
     return (dispatch) => {
         userAPI.getRepos(username, currentPage)
         .then(response => {
-            dispatch(setIsFetching(false));
             if (response.length === 0) {
                 dispatch(setIsRepo(false))
+                dispatch(setIsFetching(false));
             } else {
                 dispatch(setCurrentPage(currentPage))
-                dispatch(getTotalCountRepos(username))
                 dispatch(setRepos(response))
-               
+                dispatch(setIsFetching(false));
             }
         })
     }

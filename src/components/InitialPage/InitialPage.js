@@ -1,5 +1,4 @@
 import React from 'react';
-import withMainPage from './../../hoc/withMainPage/withMainPage';
 import styles from './InitialPage.module.css';
 import Search from './../../img/search.svg';
 
@@ -18,4 +17,4 @@ const InitialPage = (props) => {
     )
 }
 
-export default withMainPage(InitialPage);
+export default InitialPage;

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const ProfileInfoContainer = (props) => {
+    
     return (
         <ProfileInfo user={props.user}/>
     )

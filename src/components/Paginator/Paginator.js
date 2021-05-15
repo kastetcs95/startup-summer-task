@@ -20,10 +20,19 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
     return (
         <div className={styles.paginator__container}>
             <div className={styles.paginator__description}>
-                {currentPage*4-3}-{currentPage*4} of {totalItemsCount} items
+                {
+                    totalItemsCount < pageSize 
+                    ? <span>
+                        {currentPage*pageSize-(pageSize-1)}-{totalItemsCount} of {totalItemsCount} items
+                    </span>
+                    : <span>
+                        {currentPage*pageSize-(pageSize-1)}-{currentPage*pageSize} of {totalItemsCount} items
+                    </span>
+                }
+                
             </div>
             <div className={styles.paginator__pages}>
-
+            
                         {
                     portionNumber > 1 
                     && <span>
@@ -37,7 +46,8 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
                     pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                     .map(p => {
                         return (
-                            <span key={p} className={currentPage === p && styles.selectedPage} onClick={(e) => {onPageChanged(p)}}>{p}</span>
+                                <span key={p} className={currentPage === p && styles.selectedPage} onClick={(e) => {onPageChanged(p)}}>{p}</span>
+                            
                         )
                     })
                 }
@@ -49,7 +59,7 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
                         </span>
                 }
                 
-
+                
             </div>
         </div>
     )

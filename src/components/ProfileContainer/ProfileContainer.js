@@ -11,10 +11,11 @@ import NotFoundImg from './../../img/not-found.svg';
 const ProfileContainer = (props) => {
   
 
-  const onPageChanged = (pageNumber) => {
-    props.getRepos(props.searchValue, pageNumber);
+const onPageChanged = (pageNumber) => {
+  props.getRepos(props.searchValue, pageNumber);
 }
     useEffect(() => {
+      
         props.getUser(props.searchValue);
     }, [props.searchValue])
     return (

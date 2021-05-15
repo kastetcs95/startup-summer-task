@@ -32,3 +32,100 @@
 .paginator__pages span {
     margin-left: 22px;
 }
+
+@media (max-width: 920px) {
+    .paginator__pages {
+        font-size: 15px;
+        line-height: 18px;
+        margin: 0 auto;
+    }
+
+    .paginator__container {
+        margin: 20px 30px 28px 0;
+        /* flex-direction: column; */
+    }
+
+    .paginator__pages span {
+        margin-left: 15px;
+    }
+
+    .paginator__description {
+        font-size: 13px;
+        line-height: 17px;
+    }
+}
+
+@media (max-width: 800px) {
+    .paginator__pages {
+        font-size: 13px;
+        line-height: 15px;
+        margin: 5px auto 0;
+    }
+
+    .paginator__container {
+        margin: 20px 40px 28px 0;
+        flex-direction: column;
+    }
+
+    .paginator__pages span {
+        margin-left: 15px;
+    }
+
+    .paginator__pages span:first-child {
+        margin-left: 0;
+    }
+
+    .paginator__description {
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 585px) {
+    .paginator__pages {
+        font-size: 11px;
+        line-height: 15px;
+        margin: 5px auto 0;
+    }
+
+    .paginator__container {
+        margin: 20px 10px 28px 0;
+    }
+
+    .paginator__pages span {
+        margin-left: 10px;
+    }
+
+    .paginator__pages span:first-child {
+        margin-left: 0;
+    }
+
+    .paginator__description {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 455px) {
+    .paginator__pages {
+        font-size: 8px;
+        line-height: 15px;
+        margin: 5px auto 0;
+    }
+
+    .paginator__container {
+        margin: 20px 0px 28px 0;
+    }
+
+    .paginator__pages span {
+        margin-left: 7px;
+    }
+
+    .paginator__pages span:first-child {
+        margin-left: 0;
+    }
+
+    .paginator__description {
+        font-size: 9px;
+    }
+}

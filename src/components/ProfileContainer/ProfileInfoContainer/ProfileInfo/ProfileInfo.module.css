@@ -42,14 +42,111 @@
 
 .info__followers {
     display: flex;
-    padding-right: 16px;
+    width: 163px;
+    
 }
 
 .info__following {
     display: flex;
+    width: 150px;
 }
 
 .info__follows img {
     line-height: 20px;
     padding-right: 8px;
+}
+
+@media (max-width: 800px) {
+
+    .info__avatar {
+        width: 200px;
+        height: 200px;
+        margin-top: 30px;
+    }
+
+    .info__name {
+        font-size: 20px;
+        line-height: 120%;
+        margin-top: 25px;
+    }
+
+    .info__login {
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 10px;
+    }
+
+    .info__follows {
+        font-size: 13px;
+        line-height: 130%;
+    }
+}
+
+@media (max-width: 585px) {
+
+    .info__avatar {
+        width: 150px;
+        height: 150px;
+        margin-top: 30px;
+    }
+
+    .info__name {
+        font-size: 15px;
+        line-height: 120%;
+        margin-top: 25px;
+    }
+
+    .info__login {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+    }
+
+    .info__follows {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 455px) {
+
+    .info__avatar {
+        width: 120px;
+        height: 120px;
+        margin-top: 30px;
+    }
+
+    .info__name {
+        font-size: 15px;
+        line-height: 120%;
+        margin-top: 25px;
+    }
+
+    .info__login {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+    }
+
+    .info__follows {
+        font-size: 11px;
+        line-height: 130%;
+    }
+
+    .info__followers {
+        padding: 0;
+    }
+    .info__followers span{
+        padding: 5px 0 0 0;
+    }
+    
+    .info__following span{
+        padding: 5px 0 0 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .container {
+        margin-left: 20px;
+    }
 }

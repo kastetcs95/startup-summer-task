@@ -10,12 +10,16 @@
     margin: 16px 22px 16px 41px;
 }
 
+.header__input {
+    width: 500px;
+}
+
 .header__input input {
     outline: none;
     border-radius: 6px;
     border: none;
     height: 40px;
-    width: 500px;
+    width: 100%;
     margin-top: 16px;
     background-image: url(./../../img/search.svg);
     background-repeat: no-repeat;
@@ -33,4 +37,32 @@
     line-height: 17px;
     letter-spacing: 0.01em;
     color: #808080;
+}
+
+@media (max-width: 665px) {
+    .header__input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 455px) {
+    .header__input {
+        width: 180px;
+    }
+
+    .header__input input {
+        height: 30px;
+        margin-top: 20px;
+        font-size: 12px;
+    }
+
+    .header__input input::placeholder {
+        font-size: 12px;
+    }
+
+    .header__icon {
+        height: 40px;
+        width: 41px;
+        margin: 16px 20px 16px 25px;
+    }
 }
