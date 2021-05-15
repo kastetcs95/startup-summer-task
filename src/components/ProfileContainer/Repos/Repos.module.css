@@ -1,0 +1,51 @@
+.container {
+    margin: 28px 0 0 87px;
+}
+
+.errorContainer {
+    width: 100vw;
+}
+
+.repos__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+}
+
+.repos {
+    margin-top: 29px;
+}
+
+.repos__empty {
+    margin-left: -28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 72px);
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.repos__img {
+    width: 76px;
+    height: 62px;
+    margin: 0 auto;
+}
+
+.repos_img img {
+    width: 100%;
+}
+
+.repos__errorTitle {
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 140%;
+    text-align: center;
+    color: #808080;
+    width: 243px;
+    margin-top: 48px;
+}

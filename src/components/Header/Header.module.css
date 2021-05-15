@@ -1,0 +1,36 @@
+.header {
+    height: 72px;
+    background-color: #0064EB;
+    display: flex;
+}
+
+.header__icon {
+    height: 40px;
+    width: 41px;
+    margin: 16px 22px 16px 41px;
+}
+
+.header__input input {
+    outline: none;
+    border-radius: 6px;
+    border: none;
+    height: 40px;
+    width: 500px;
+    margin-top: 16px;
+    background-image: url(./../../img/search.svg);
+    background-repeat: no-repeat;
+    background-position: 19px;  
+    padding-left: 44px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.01em;
+}
+
+.header__input input::placeholder {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.01em;
+    color: #808080;
+}

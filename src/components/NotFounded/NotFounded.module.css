@@ -1,0 +1,31 @@
+.container {
+    height: calc(100vh - 72px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.notFoundPage {
+    height: 173px;
+    width: 210px;
+}
+
+.notFoundPage__icon {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+}
+
+.notFoundPage__icon img{
+    width: 100%;
+}
+
+.notFoundPage__title {
+    margin-top: 24px;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 140%;
+    text-align: center;
+    color: #808080;
+}

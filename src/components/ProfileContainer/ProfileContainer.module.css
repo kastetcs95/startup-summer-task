@@ -1,0 +1,12 @@
+.container {
+    min-height: calc(100vh - 72px);
+    display: flex;
+}
+
+.preloader__container {
+    height: calc(100vh - 72px);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

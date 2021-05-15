@@ -1,0 +1,30 @@
+.container {
+    height: calc(100vh - 72px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.initialPage {
+    height: 173px;
+    width: 210px;
+}
+
+.initialPage__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+}
+
+.initialPage__icon img{
+    width: 100%;
+}
+
+.initialPage__title {
+    margin-top: 47px;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 140%;
+    text-align: center;
+    color: #808080;
+}
