@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Header.module.css';
 import Icon from './../../img/icon.svg';
 import { connect } from 'react-redux';
 import {setSearchUser, getUser, getRepos, setIsFetching} from './../../redux/reducers/users-reducer';
 import { withRouter } from 'react-router';
-import {NavLink} from 'react-router-dom';
 
 const Header = (props) => {
     const [value, setValue] = useState("");
@@ -18,7 +17,6 @@ const Header = (props) => {
             props.setSearchUser(value);
             props.setIsFetching(true);
             props.history.push(`/users`);
-            // props.getUser(value);
         }
     }
 

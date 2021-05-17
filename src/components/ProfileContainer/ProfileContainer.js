@@ -10,30 +10,34 @@ import NotFoundImg from './../../img/not-found.svg';
 
 const ProfileContainer = (props) => {
   
-
 const onPageChanged = (pageNumber) => {
   props.getRepos(props.searchValue, pageNumber);
 }
+
     useEffect(() => {
-      
         props.getUser(props.searchValue);
     }, [props.searchValue])
+
     return (
         <div className={styles.container}>
-        {props.isFetching 
-        ? <div className={styles.preloader__container}>
-            <Preloader/>
-          </div>
-        : <>
-            {props.isFounded && props.searchValue &&
-            <>
-                <ProfileInfoContainer/>
-                <ReposContainer onPageChanged={onPageChanged}/>
+          {
+          props.isFetching 
+            ? <div className={styles.preloader__container}>
+                <Preloader/>
+              </div>
+            : <>
+                {
+                  props.isFounded && props.searchValue 
+                  && <>
+                        <ProfileInfoContainer/>
+                        <ReposContainer onPageChanged={onPageChanged}/>
+                  </>
+                }
+                {
+                (!props.searchValue ||!props.isFounded) 
+                && <NotFounded img={NotFoundImg} title="User not found"/>}
             </>
-            }
-            {(!props.searchValue ||!props.isFounded) && <NotFounded img={NotFoundImg} title="User not found"/>}
-        </>}
-            
+          }
         </div>
     )
 }

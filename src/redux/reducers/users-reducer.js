@@ -85,7 +85,6 @@ export const getUser = (username) => {
                 dispatch(setIsFounded(false))
                 dispatch(setIsFetching(false))
             } else {
-                
                 dispatch(getTotalCountRepos(username))
                 dispatch(setSearchUser(username))
                 dispatch(setUser(response))

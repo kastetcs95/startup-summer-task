@@ -11,7 +11,7 @@ const ProfileInfo = (props) => {
                 <img src={props.user.avatar_url} alt="Avatar"/>
             </div>
             <div className={styles.info__name}>
-                {props.name || "Noname"}
+                {props.name || "Name not set "}
             </div>
             <div className={styles.info__login}>
                 <a href={props.user.html_url} rel="noreferrer" target="_blank">{props.user.login}</a>

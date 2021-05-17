@@ -8,7 +8,7 @@ const Repo = (props) => {
                 <a href={props.repo.html_url} rel="noreferrer" target="_blank">{props.repo.name}</a>
             </div>
             <div className={styles.repo__subtitle}>
-                {props.repo.description || "NON DESCRIPTION"}
+                {props.repo.description || "DESCRIPTION NOT SET"}
             </div>
         </div>
     )

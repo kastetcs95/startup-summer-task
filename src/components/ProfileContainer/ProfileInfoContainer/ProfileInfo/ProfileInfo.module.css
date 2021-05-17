@@ -57,7 +57,6 @@
 }
 
 @media (max-width: 800px) {
-
     .info__avatar {
         width: 200px;
         height: 200px;
@@ -87,19 +86,14 @@
     .info__avatar {
         width: 150px;
         height: 150px;
-        margin-top: 30px;
     }
 
     .info__name {
         font-size: 15px;
-        line-height: 120%;
-        margin-top: 25px;
     }
 
     .info__login {
         font-size: 12px;
-        line-height: 18px;
-        margin-top: 10px;
     }
 
     .info__follows {
@@ -113,35 +107,21 @@
     .info__avatar {
         width: 120px;
         height: 120px;
-        margin-top: 30px;
-    }
-
-    .info__name {
-        font-size: 15px;
-        line-height: 120%;
-        margin-top: 25px;
-    }
-
-    .info__login {
-        font-size: 12px;
-        line-height: 18px;
-        margin-top: 10px;
     }
 
     .info__follows {
         font-size: 11px;
-        line-height: 130%;
     }
 
     .info__followers {
         padding: 0;
     }
     .info__followers span{
-        padding: 5px 0 0 0;
+        padding-top: 5px;
     }
     
     .info__following span{
-        padding: 5px 0 0 0;
+        padding-top: 5px;
     }
 }
 

@@ -29,37 +29,40 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
                         {currentPage*pageSize-(pageSize-1)}-{currentPage*pageSize} of {totalItemsCount} items
                     </span>
                 }
-                
             </div>
             <div className={styles.paginator__pages}>
-            
-                        {
+                {
                     portionNumber > 1 
                     && <span>
                         <span onClick={() => {setPortionNumber(portionNumber - 1);}}><img src={leftArrow} alt="left arrow"/></span>
                         <span className={currentPage === 1 && styles.selectedPage} onClick={(e) => {onPageChanged(1);setPortionNumber(1)}}>1</span><span>...</span>
                     </span>
                 }
-            
                 {
-                    
                     pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                     .map(p => {
                         return (
-                                <span key={p} className={currentPage === p && styles.selectedPage} onClick={(e) => {onPageChanged(p)}}>{p}</span>
-                            
+                                <span key={p} 
+                                      className={currentPage === p && styles.selectedPage} 
+                                      onClick={(e) => {onPageChanged(p)}}>{p}</span>
                         )
                     })
                 }
                 {
-                    portionCount > portionNumber &&
-                        <span>
-                            ...<span className={currentPage === pagesCount && styles.selectedPage} onClick={(e) => {onPageChanged(pagesCount);setPortionNumber(portionCount)}}>{pagesCount}</span>
-                            <span onClick={() => {setPortionNumber(portionNumber + 1)}}><img src={rightArrow} alt="right arrow"/></span>
-                        </span>
+                    portionCount > portionNumber 
+                    && <span>
+                            ...
+                            <span className={currentPage === pagesCount && styles.selectedPage} 
+                                     onClick={(e) => {
+                                         onPageChanged(pagesCount);
+                                         setPortionNumber(portionCount)
+                                     }}>{pagesCount}
+                            </span>
+                            <span onClick={() => {setPortionNumber(portionNumber + 1)}}>
+                                <img src={rightArrow} alt="right arrow"/>
+                            </span>
+                    </span>
                 }
-                
-                
             </div>
         </div>
     )
