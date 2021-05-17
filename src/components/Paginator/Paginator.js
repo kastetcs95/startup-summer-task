@@ -4,7 +4,7 @@ import leftArrow from './../../img/left-arrow.svg';
 import rightArrow from './../../img/right-arrow.svg';
 
 const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 3}) => {
-   
+   debugger;
     const pagesCount = Math.ceil(totalItemsCount / pageSize);
 
     const pages = [];

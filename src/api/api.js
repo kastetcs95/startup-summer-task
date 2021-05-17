@@ -1,6 +1,6 @@
 import * as axios from 'axios';
 
-export const userAPI = {
+export const githubAPI = {
     async getUser(username) {
         return await axios.get(`https://api.github.com/users/${username}`)
             .then(response => response.data)
@@ -16,13 +16,5 @@ export const userAPI = {
                 console.log(error.response);
                 return error.response;
             })
-    },
-    async getTotalCountRepos(username) {
-        return await axios.get(`https://api.github.com/users/${username}/repos`)
-            .then(response => response.data)
-            .catch(error => {
-                console.log(error.response);
-                return error.response;
-            })
-    },
+    }
 }

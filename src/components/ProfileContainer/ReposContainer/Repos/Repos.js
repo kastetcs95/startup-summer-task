@@ -3,6 +3,7 @@ import Repo from './Repo/Repo';
 import styles from './Repos.module.css';
 import EmptyRepos from './../../../../img/empty-repos.svg';
 import Paginator from './../../../Paginator/Paginator';
+import Preloader from '../../../Preloader/Preloader';
 
 const Repos = (props) => {
     return (
@@ -21,9 +22,13 @@ const Repos = (props) => {
                     <div className={styles.repos__title}>
                         Repositories ({props.totalReposCount})
                     </div>
-                    <div className={styles.repos}>
-                        {props.repos.map(repo => <Repo key={repo.id} repo={repo}/>)}
-                    </div>
+                    {
+                        props.isFetchingRepos 
+                        ? <Preloader/>
+                        : <div className={styles.repos}>
+                            {props.repos.map(repo => <Repo key={repo.id} repo={repo}/>)}
+                         </div>
+                    }
                     <Paginator totalItemsCount={props.totalReposCount} 
                             pageSize={4} 
                             currentPage={props.currentPage}

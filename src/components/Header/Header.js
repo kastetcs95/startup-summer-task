@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Header.module.css';
 import Icon from './../../img/icon.svg';
 import { connect } from 'react-redux';
-import {setSearchUser, getUser, getRepos, setIsFetching} from './../../redux/reducers/users-reducer';
+import {setSearchUser, setIsFetching} from './../../redux/reducers/users-reducer';
 import { withRouter } from 'react-router';
 
 const Header = (props) => {
@@ -50,4 +50,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default withRouter(connect(mapStateToProps, {setSearchUser, getUser, getRepos, setIsFetching})(Header));
+export default withRouter(connect(mapStateToProps, {setSearchUser, setIsFetching})(Header));

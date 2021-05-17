@@ -1,19 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Repos from './Repos/Repos';
-import {getRepos} from './../../../redux/reducers/users-reducer';
+import {getRepos} from './../../../redux/reducers/repos-reducer';
 import Preloader from './../../Preloader/Preloader';
 
 const ReposContainer = (props) => {
     return (
         <>
             {
-                props.isFetchingRepos 
-                ? <Preloader/>
-                : <Repos repos={props.repos} 
+               <Repos repos={props.repos} 
                          totalReposCount={props.totalReposCount} 
                          currentPage={props.currentPage} 
-                         onPageChanged={props.onPageChanged}/>
+                         onPageChanged={props.onPageChanged}
+                         isFetchingRepos={props.isFetchingRepos}/>
             }
        </>
     )
@@ -21,10 +20,10 @@ const ReposContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return { 
-        repos: state.user.repos,
-        totalReposCount: state.user.totalReposCount,
-        currentPage: state.user.currentPage,
-        isFetchingRepos: state.user.isFetchingRepos
+        repos: state.repos.repos,
+        totalReposCount: state.repos.totalReposCount,
+        currentPage: state.repos.currentPage,
+        isFetchingRepos: state.repos.isFetchingRepos
     }
 }
 
