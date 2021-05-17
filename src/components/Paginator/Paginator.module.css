@@ -112,3 +112,14 @@
         font-size: 9px;
     }
 }
+
+@media (max-width: 340px) {
+    .selectedPage {
+        padding: 1px 1px;
+        width: 10px;
+    }
+
+    .paginator__pages span {
+        margin-left: 6px;
+    }
+}

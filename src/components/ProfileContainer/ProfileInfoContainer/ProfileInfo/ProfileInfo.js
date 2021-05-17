@@ -4,7 +4,6 @@ import Followers from './../../../../img/followers.svg';
 import Following from './../../../../img/following.svg';
 
 const ProfileInfo = (props) => {
-debugger;
     return (
         <div className={styles.container}>
             <div className={styles.info__avatar}>

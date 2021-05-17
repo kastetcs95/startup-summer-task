@@ -24,7 +24,9 @@ const Repos = (props) => {
                     </div>
                     {
                         props.isFetchingRepos 
-                        ? <Preloader/>
+                        ? <div className={styles.repos__preloader}>
+                            <Preloader/>
+                          </div>
                         : <div className={styles.repos}>
                             {props.repos.map(repo => <Repo key={repo.id} repo={repo}/>)}
                          </div>

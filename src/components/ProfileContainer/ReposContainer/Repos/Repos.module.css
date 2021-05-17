@@ -6,6 +6,10 @@
     width: 100vw;
 }
 
+.repos__preloader {
+    margin: 29px 0 0 40px;
+}
+
 .repos__title {
     font-weight: 600;
     font-size: 32px;
@@ -55,6 +59,9 @@
     .container {
         margin: 28px 0 0 20px;
     }
+    .repos__preloader {
+        margin-left: 15px;
+    }
 }
 
 @media (max-width: 585px) {
@@ -82,5 +89,11 @@
 
     .repos {
         margin-top: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .repos__preloader {
+        margin-left: -10px;
     }
 }
