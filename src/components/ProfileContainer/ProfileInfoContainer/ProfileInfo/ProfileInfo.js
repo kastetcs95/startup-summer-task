@@ -4,14 +4,14 @@ import Followers from './../../../../img/followers.svg';
 import Following from './../../../../img/following.svg';
 
 const ProfileInfo = (props) => {
-
+debugger;
     return (
         <div className={styles.container}>
             <div className={styles.info__avatar}>
                 <img src={props.user.avatar_url} alt="Avatar"/>
             </div>
             <div className={styles.info__name}>
-                {props.name || "Name not set "}
+                {props.user.name || "Name not set"}
             </div>
             <div className={styles.info__login}>
                 <a href={props.user.html_url} rel="noreferrer" target="_blank">{props.user.login}</a>

@@ -9,7 +9,7 @@ const ReposContainer = (props) => {
         <>
             {
                 props.isFetchingRepos 
-                ? <Preloader />
+                ? <Preloader/>
                 : <Repos repos={props.repos} 
                          totalReposCount={props.totalReposCount} 
                          currentPage={props.currentPage} 
@@ -23,7 +23,8 @@ const mapStateToProps = (state) => {
     return { 
         repos: state.user.repos,
         totalReposCount: state.user.totalReposCount,
-        currentPage: state.user.currentPage
+        currentPage: state.user.currentPage,
+        isFetchingRepos: state.user.isFetchingRepos
     }
 }
 

@@ -6,6 +6,7 @@ const SET_SEARCH_USER = "SET_SEARCH_USER";
 const IS_FOUNDED = "IS_FOUNDED";
 const IS_REPO = "IS_REPO";
 const IS_FETCHING = "IS_FETCHING";
+const IS_FETCHING_R = "IS_FETCHING_R";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_REPOS_COUNT = "SET_TOTAL_REPOS_COUNT";
 
@@ -16,6 +17,7 @@ const initialState = {
     isFounded: true,
     isRepo: true,
     isFetching: false,
+    isFetchingRepos: false,
     totalReposCount: 0,
     currentPage: 1
 };
@@ -52,6 +54,11 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: action.isFetching
             }
+        case IS_FETCHING_R:
+        return {
+            ...state,
+            isFetchingRepos: action.isFetchingRepos
+        }
         case SET_CURRENT_PAGE:
             return {
                 ...state,
@@ -73,9 +80,9 @@ export const setIsFounded = (value) => ({type: IS_FOUNDED, value})
 export const setIsRepo = (value) => ({type: IS_REPO, value})
 export const setRepos = (repos) => ({type: SET_REPOS, repos})
 export const setIsFetching = (isFetching) => ({type: IS_FETCHING, isFetching});
+export const setIsFetchingRepos = (isFetchingRepos) => ({type: IS_FETCHING_R, isFetchingRepos});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 export const setTotalReposCount = (totalReposCount) => ({type: SET_TOTAL_REPOS_COUNT, totalReposCount});
-
 
 export const getUser = (username) => {
     return (dispatch) => {
@@ -85,7 +92,7 @@ export const getUser = (username) => {
                 dispatch(setIsFounded(false))
                 dispatch(setIsFetching(false))
             } else {
-                dispatch(getTotalCountRepos(username))
+                dispatch(setTotalReposCount(response.public_repos))
                 dispatch(setSearchUser(username))
                 dispatch(setUser(response))
                 dispatch(setIsFounded(true))
@@ -95,17 +102,9 @@ export const getUser = (username) => {
     }
 }
 
-export const getTotalCountRepos = (username) => {
-    return (dispatch) => {
-        userAPI.getTotalCountRepos(username)
-        .then(response => {
-            dispatch(setTotalReposCount(response.length))
-        })
-    }
-}
-
 export const getRepos = (username, currentPage = 1) => {
     return (dispatch) => {
+        dispatch(setIsFetchingRepos(true))
         userAPI.getRepos(username, currentPage)
         .then(response => {
             if (response.length === 0) {
@@ -115,6 +114,7 @@ export const getRepos = (username, currentPage = 1) => {
                 dispatch(setCurrentPage(currentPage))
                 dispatch(setRepos(response))
                 dispatch(setIsFetching(false));
+                dispatch(setIsFetchingRepos(false))
             }
         })
     }
