@@ -5,7 +5,6 @@ import Following from './../../../../img/following.svg';
 import typedOutputFollows from './../../../../typed-output-follows';
 
 const ProfileInfo = (props) => {
-debugger;
     const typedFollowers = typedOutputFollows(props.user.followers);
     const typedFollowing = typedOutputFollows(props.user.following);
 

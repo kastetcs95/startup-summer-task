@@ -13,7 +13,8 @@ const Header = (props) => {
     }
 
     const handleEnter = (e) => {
-        if (e.code === 'Enter') {
+
+        if (e.keyCode === 13) {
             props.setSearchUser(value);
             props.setIsFetching(true);
             props.history.push(`/users`);
