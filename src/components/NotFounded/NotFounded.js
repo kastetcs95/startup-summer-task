@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './NotFounded.module.css';
-import NotFoundImg from './../../img/not-found.svg';
 
 const NotFounded = (props) => {
     return (

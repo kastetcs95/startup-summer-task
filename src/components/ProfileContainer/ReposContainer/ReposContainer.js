@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Repos from './Repos/Repos';
 import {getRepos} from './../../../redux/reducers/repos-reducer';
-import Preloader from './../../Preloader/Preloader';
 
 const ReposContainer = (props) => {
     return (
